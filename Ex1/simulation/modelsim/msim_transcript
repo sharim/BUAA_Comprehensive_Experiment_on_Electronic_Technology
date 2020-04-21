@@ -1,0 +1,56 @@
+# Reading C:/Software/QuartusII/modelsim_ase/tcl/vsim/pref.tcl 
+# do Ex1_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\Software\QuartusII\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\Software\QuartusII\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/MyProject/CEET/Ex1 {D:/MyProject/CEET/Ex1/ex1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module andGate
+# -- Compiling module orGate
+# -- Compiling module notGate
+# -- Compiling module nandGate
+# -- Compiling module aoiGate
+# -- Compiling module xorGate
+# -- Compiling module Ex1
+# 
+# Top level modules:
+# 	Ex1
+# 
+# vlog -vlog01compat -work work +incdir+D:/MyProject/CEET/Ex1 {D:/MyProject/CEET/Ex1/tb_Ex1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_Ex1
+# 
+# Top level modules:
+# 	tb_Ex1
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb_Ex1
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_Ex1 
+# Loading work.tb_Ex1
+# Loading work.Ex1
+# Loading work.andGate
+# Loading work.orGate
+# Loading work.notGate
+# Loading work.nandGate
+# Loading work.aoiGate
+# Loading work.xorGate
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $finish    : D:/MyProject/CEET/Ex1/tb_Ex1.v(33)
+#    Time: 160 ns  Iteration: 0  Instance: /tb_Ex1
+# 1
+# Break in Module tb_Ex1 at D:/MyProject/CEET/Ex1/tb_Ex1.v line 33
+# Simulation Breakpoint: 1
+# Break in Module tb_Ex1 at D:/MyProject/CEET/Ex1/tb_Ex1.v line 33
+# MACRO ./Ex1_run_msim_rtl_verilog.do PAUSED at line 17
