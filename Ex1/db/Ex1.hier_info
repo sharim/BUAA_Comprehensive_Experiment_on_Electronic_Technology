@@ -3,12 +3,12 @@ in[0] => in[0].IN6
 in[1] => in[1].IN5
 in[2] => in[2].IN1
 in[3] => in[3].IN1
-out[0] <= xorGate:Xor1.out
-out[1] <= aoiGate:Aoi1.out
-out[2] <= nandGate:Nand1.out
-out[3] <= notGate:Not1.out
-out[4] <= orGate:Or1.out
-out[5] <= andGate:And1.out
+out[0] << xorGate:Xor1.out
+out[1] << aoiGate:Aoi1.out
+out[2] << nandGate:Nand1.out
+out[3] << notGate:Not1.out
+out[4] << orGate:Or1.out
+out[5] << andGate:And1.out
 
 
 |Ex1|andGate:And1
