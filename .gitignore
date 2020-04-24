@@ -1,0 +1,11 @@
+Ex[0-9]/db
+Ex[0-9]/incremental_db
+EX[0-9]/simulation
+*.rpt
+*.out
+*.vcd
+*.qws
+*.qsf
+*.qpf
+*.bak
+*.lxt
