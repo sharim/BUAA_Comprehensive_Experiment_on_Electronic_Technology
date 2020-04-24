@@ -4,27 +4,31 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "out[0]",
+					"name" : "and_out",
 					"strict" : false
 				},
 				{
-					"name" : "out[1]",
+					"name" : "or_out",
 					"strict" : false
 				},
 				{
-					"name" : "out[2]",
+					"name" : "not_out",
 					"strict" : false
 				},
 				{
-					"name" : "out[3]",
+					"name" : "nand_out",
 					"strict" : false
 				},
 				{
-					"name" : "out[4]",
+					"name" : "aoi_out",
 					"strict" : false
 				},
 				{
-					"name" : "out[5]",
+					"name" : "xor_out_1",
+					"strict" : false
+				},
+				{
+					"name" : "xor_out_2",
 					"strict" : false
 				},
 				{

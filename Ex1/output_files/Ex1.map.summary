@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Tue Apr 21 23:32:33 2020
+Analysis & Synthesis Status : Successful - Fri Apr 24 21:56:38 2020
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Ex1
 Top-level Entity Name : Ex1
@@ -7,7 +7,7 @@ Total logic elements : 4
     Total combinational functions : 4
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 10
+Total pins : 11
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

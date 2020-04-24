@@ -7,7 +7,7 @@ vandGate
 IPVJa=>7zzc7hib4klCG?j2
 V81XY:?[O@NK[PPIe=hzBQ3
 Z1 dD:\MyProject\CEET\Ex1\simulation\modelsim
-Z2 w1587399176
+Z2 w1587729643
 Z3 FD:/MyProject/CEET/Ex1/Gates.v
 Z4 8D:/MyProject/CEET/Ex1/ex1.v
 Z5 FD:/MyProject/CEET/Ex1/ex1.v
@@ -15,7 +15,7 @@ L0 1
 Z6 OV;L;10.1d;51
 r1
 31
-Z7 !s108 1587400398.785000
+Z7 !s108 1587736623.609000
 Z8 !s107 D:/MyProject/CEET/Ex1/Gates.v|D:/MyProject/CEET/Ex1/ex1.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/MyProject/CEET/Ex1|D:/MyProject/CEET/Ex1/ex1.v|
 Z10 o-vlog01compat -work work -O0
@@ -48,8 +48,8 @@ naoi@gate
 !s85 0
 !s101 -O0
 vEx1
-I54MgWMdKf5GDPS<[nn_Db3
-VnWnDd:;OGOgic@WLY4fg;1
+IecCg9l?P=S0NeFlO:P<;g1
+VImNMNkW1mTZbF_3mZZ6az1
 R1
 R2
 R4
@@ -65,9 +65,30 @@ R10
 R11
 n@ex1
 !i10b 1
-!s100 hc5haN?TFZY7_II<hRH[U1
+!s100 TRF5VEDUEf]45CGXl8XoK3
 !s85 0
 !s101 -O0
+vEx1_tb
+!i10b 1
+!s100 :laUHB``OmgjWd:;D?AE63
+IHSNbE5T]FJ26H0>AgiVgg2
+VmYC0`ZbYU9DPS<Xa3eNcJ0
+R1
+w1587718863
+8D:/MyProject/CEET/Ex1/Ex1_tb.v
+FD:/MyProject/CEET/Ex1/Ex1_tb.v
+L0 4
+R6
+r1
+!s85 0
+31
+!s108 1587736624.537000
+!s107 D:/MyProject/CEET/Ex1/Ex1_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/MyProject/CEET/Ex1|D:/MyProject/CEET/Ex1/Ex1_tb.v|
+!s101 -O0
+R10
+R11
+n@ex1_tb
 vnandGate
 IQX:1lTOhWG9U]b`HAZahm1
 V[_M0L9Y]IBbF[ZX?8A?YL2
@@ -134,27 +155,6 @@ nor@gate
 !s100 ji]>FHLT`O53]^?f_1Qo01
 !s85 0
 !s101 -O0
-vtb_Ex1
-!i10b 1
-!s100 `QPa^N;_XbZ^_N8OB0Y9@1
-I?L6J5h:HmIYBb3ZR@Zmoe1
-Vhgzz=9<6BKdJGT`aYehM]2
-R1
-w1587400279
-8D:/MyProject/CEET/Ex1/tb_Ex1.v
-FD:/MyProject/CEET/Ex1/tb_Ex1.v
-L0 4
-R6
-r1
-!s85 0
-31
-!s108 1587400399.543000
-!s107 D:/MyProject/CEET/Ex1/tb_Ex1.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/MyProject/CEET/Ex1|D:/MyProject/CEET/Ex1/tb_Ex1.v|
-!s101 -O0
-R10
-R11
-ntb_@ex1
 vxorGate
 I>eiE=0V5fenSL>JGVIPAM2
 V]=34;n3QgzIK`><LogNW23

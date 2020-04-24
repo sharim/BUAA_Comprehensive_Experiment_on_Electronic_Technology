@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Ex1
-Tue Apr 21 23:32:33 2020
+Fri Apr 24 21:56:38 2020
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -42,7 +42,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 21 23:32:33 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 24 21:56:38 2020       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Ex1                                         ;
 ; Top-level Entity Name              ; Ex1                                         ;
@@ -51,7 +51,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 4                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 10                                          ;
+; Total pins                         ; 11                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -192,13 +192,13 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 0           ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 10          ;
+; I/O pins                                    ; 11          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; in[0]~input ;
+; Maximum fan-out node                        ; in[1]~input ;
 ; Maximum fan-out                             ; 5           ;
-; Total fan-out                               ; 26          ;
+; Total fan-out                               ; 28          ;
 ; Average fan-out                             ; 1.08        ;
 +---------------------------------------------+-------------+
 
@@ -208,8 +208,9 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Ex1                       ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |Ex1                ; Ex1         ; work         ;
-;    |aoiGate:Aoi1|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Ex1|aoiGate:Aoi1   ; aoiGate     ; work         ;
+; |Ex1                       ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |Ex1                ; Ex1         ; work         ;
+;    |andGate:And1|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Ex1|andGate:And1   ; andGate     ; work         ;
+;    |aoiGate:Aoi1|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Ex1|aoiGate:Aoi1   ; aoiGate     ; work         ;
 ;    |orGate:Or1|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Ex1|orGate:Or1     ; orGate      ; work         ;
 ;    |xorGate:Xor1|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Ex1|xorGate:Xor1   ; xorGate     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
@@ -236,7 +237,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 10                          ;
+; boundary_port         ; 11                          ;
 ; cycloneiii_lcell_comb ; 7                           ;
 ;     normal            ; 7                           ;
 ;         1 data inputs ; 3                           ;
@@ -263,7 +264,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Apr 21 23:32:17 2020
+    Info: Processing started: Fri Apr 24 21:56:26 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Ex1 -c Ex1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -276,23 +277,23 @@ Warning (12125): Using design file ex1.v, which is not specified as a design fil
     Info (12023): Found entity 6: xorGate File: D:/MyProject/CEET/Ex1/Gates.v Line: 36
     Info (12023): Found entity 7: Ex1 File: D:/MyProject/CEET/Ex1/ex1.v Line: 3
 Info (12127): Elaborating entity "Ex1" for the top level hierarchy
-Info (12128): Elaborating entity "andGate" for hierarchy "andGate:And1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 6
-Info (12128): Elaborating entity "orGate" for hierarchy "orGate:Or1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 8
-Info (12128): Elaborating entity "notGate" for hierarchy "notGate:Not1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 10
-Info (12128): Elaborating entity "nandGate" for hierarchy "nandGate:Nand1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 12
-Info (12128): Elaborating entity "aoiGate" for hierarchy "aoiGate:Aoi1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 14
-Info (12128): Elaborating entity "xorGate" for hierarchy "xorGate:Xor1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 16
+Info (12128): Elaborating entity "andGate" for hierarchy "andGate:And1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 14
+Info (12128): Elaborating entity "orGate" for hierarchy "orGate:Or1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 16
+Info (12128): Elaborating entity "notGate" for hierarchy "notGate:Not1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 18
+Info (12128): Elaborating entity "nandGate" for hierarchy "nandGate:Nand1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 20
+Info (12128): Elaborating entity "aoiGate" for hierarchy "aoiGate:Aoi1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 22
+Info (12128): Elaborating entity "xorGate" for hierarchy "xorGate:Xor1" File: D:/MyProject/CEET/Ex1/ex1.v Line: 24
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 15 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 6 output pins
+    Info (21059): Implemented 7 output pins
     Info (21061): Implemented 4 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4749 megabytes
-    Info: Processing ended: Tue Apr 21 23:32:33 2020
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Processing ended: Fri Apr 24 21:56:38 2020
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
 
 

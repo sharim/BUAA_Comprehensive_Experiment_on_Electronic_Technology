@@ -23,7 +23,7 @@ module nandGate(
 	 input [1:0] in,
 	 output out
 );
-	 assign out = ~(& in);
+	 assign out =  ~(& in);
 endmodule // 与非门
 
 module aoiGate(

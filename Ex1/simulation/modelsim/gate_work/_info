@@ -4,34 +4,55 @@ K3
 cModel Technology
 Z0 dD:\MyProject\CEET\Ex1\simulation\modelsim
 vEx1
-IGfOh`74Ga2MIdo[zl;jEC2
-Va[Gn;OlAJI]98J`oYK;Jh0
+I?eUaBFkmbl9[AAMBEJgQ>0
+VnWnDd:;OGOgic@WLY4fg;1
 Z1 dD:\MyProject\CEET\Ex1\simulation\modelsim
-Z2 w1587390425
+Z2 w1587554469
 Z3 8Ex1_8_1200mv_85c_slow.vo
 Z4 FEx1_8_1200mv_85c_slow.vo
 L0 31
 Z5 OV;L;10.1d;51
 r1
 31
-Z6 !s108 1587391056.361000
+Z6 !s108 1587699748.646000
 Z7 !s107 Ex1_8_1200mv_85c_slow.vo|
 Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|Ex1_8_1200mv_85c_slow.vo|
 Z9 o-vlog01compat -work work -O0
 Z10 !s92 -vlog01compat -work work +incdir+. -O0
 n@ex1
 !i10b 1
-!s100 DL7ViN5^o6T[]I?:N3=n>1
+!s100 D1NIC^Zm<Y5VgBe@U_0Tl2
 !s85 0
 !s101 -O0
+vEx1_tb
+!i10b 1
+!s100 zzT6IPRkKSz[YN:So@Rl<2
+I]26D^T]B6=GZnXJi=1d7M0
+V]iE2^]Q>Y7R0DWZ:ia>SX1
+R1
+w1587693999
+8D:/MyProject/CEET/Ex1/Ex1_tb.v
+FD:/MyProject/CEET/Ex1/Ex1_tb.v
+L0 4
+R5
+r1
+!s85 0
+31
+!s108 1587699749.132000
+!s107 D:/MyProject/CEET/Ex1/Ex1_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/MyProject/CEET/Ex1|D:/MyProject/CEET/Ex1/Ex1_tb.v|
+!s101 -O0
+R9
+!s92 -vlog01compat -work work +incdir+D:/MyProject/CEET/Ex1 -O0
+n@ex1_tb
 vhard_block
-InH25BgSLk0R9zGiPaYM;a1
+I7C6U`6[D<=;nRBA>76e9e2
 V1m]i>AnE2>l?mEgJ@k?_m1
 R1
 R2
 R3
 R4
-L0 125
+L0 286
 R5
 r1
 31
@@ -41,27 +62,6 @@ R8
 R9
 R10
 !i10b 1
-!s100 Y1RE2:ZiH8fOjk`^8ZITA3
+!s100 ^@XCnkacPGief:U^;BZZb0
 !s85 0
 !s101 -O0
-vtb_Ex1
-!i10b 1
-!s100 b2MNT]=fKI1T;z44fDL0B1
-I_d_n4CLX5EXUXSG0Wdl3W0
-Vhgzz=9<6BKdJGT`aYehM]2
-R1
-w1587390911
-8D:/MyProject/CEET/Ex1/tb_Ex1.v
-FD:/MyProject/CEET/Ex1/tb_Ex1.v
-L0 4
-R5
-r1
-!s85 0
-31
-!s108 1587391056.745000
-!s107 D:/MyProject/CEET/Ex1/tb_Ex1.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/MyProject/CEET/Ex1|D:/MyProject/CEET/Ex1/tb_Ex1.v|
-!s101 -O0
-R9
-!s92 -vlog01compat -work work +incdir+D:/MyProject/CEET/Ex1 -O0
-ntb_@ex1
