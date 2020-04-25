@@ -1,4 +1,4 @@
-// TODO: 8-3编码器、 优先编码器
+// * 8-3编码器、 优先编码器
 
 module encoder__8_to_3(
     input  [7:0] in,
@@ -36,7 +36,7 @@ module priorityEncoder_74xx148(
 );
 
     integer i;
-    always @(in) begin
+    always @(ST or in) begin
         if (!ST) begin
             if(&in) begin
                 {out, YEX, YS} <= 5'b1_1110;

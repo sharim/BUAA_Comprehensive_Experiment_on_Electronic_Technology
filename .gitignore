@@ -1,6 +1,8 @@
 Ex[0-9]/db
 Ex[0-9]/incremental_db
+EX[0-9]/output_files
 EX[0-9]/simulation
+*.zip
 *.rpt
 *.out
 *.vcd
@@ -9,3 +11,6 @@ EX[0-9]/simulation
 *.qpf
 *.bak
 *.lxt
+*.qdf
+.gitignore
+.vscode

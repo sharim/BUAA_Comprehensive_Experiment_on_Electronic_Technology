@@ -1,13 +1,7 @@
-//~ `New testbench
+//~ Testbench of Ex1
 `timescale 1ns/1ps
 
 module Ex1_tb();
-
-    // initial
-    //  begin
-    //    $dumpfile("Ex1_tb.vcd");
-    //    $dumpvars(0, Ex1_tb);
-    //  end
 
     // Ex1 Parameters
     parameter PERIOD = 10;
@@ -28,10 +22,6 @@ module Ex1_tb();
     initial begin
     forever #(PERIOD/2) clk = ~clk;
     end
-
-    // initial begin
-    //     #(PERIOD*2) rst_n = 1;
-    // end
 
     Ex1  u_Ex1 (
         .in        (in        [3:0]),

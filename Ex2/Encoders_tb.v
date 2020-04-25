@@ -5,11 +5,10 @@
 
 module Encoders_tb();
 
-    initial
-        begin
-            $dumpfile("Encoders_tb.vcd");
-            $dumpvars(0, Encoders_tb);
-        end
+    initial begin
+        $dumpfile("Encoders_tb.vcd");
+        $dumpvars(0, Encoders_tb);
+    end
 
     // encoder__8_to_3 Parameters
     parameter PERIOD = 10;
