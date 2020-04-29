@@ -1,4 +1,4 @@
-// TODO: testbench and debug
+// * 四位选择器、八位选择器
 
 module mux_4_1(
     input       S,
@@ -21,6 +21,6 @@ module mux_8_1_74LS151(
     output      W
 );
 
-    assign {Y, W} = S? {1'b0, 1'b1} : {D[A], ~D[A]);
+    assign {Y, W} = S? {1'b0, 1'b1} : {D[A], ~D[A]};
 
 endmodule

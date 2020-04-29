@@ -1,4 +1,4 @@
-// TODO: BCD-七段显示译码器
+// * 3-8译码器、BCD-七段显示译码器
 
 module decoder__3_8(
     input               S1,

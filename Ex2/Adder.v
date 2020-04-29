@@ -1,3 +1,5 @@
+// * 半加器、全加器、四位全加器
+
 module half_adder(
     input  X,
     input  Y,

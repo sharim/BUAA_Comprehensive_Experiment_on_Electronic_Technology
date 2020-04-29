@@ -1,4 +1,4 @@
-// TODO: testbench and debug
+// * 数值比较器
 
 module foul_bit_numComparator(
     input  [3:0] A,
@@ -7,6 +7,6 @@ module foul_bit_numComparator(
     output [2:0] Y
 );
 
-    assign Y = (A>B)? 3'b001:((A=B)? 3'b010:3'b100);
+    assign Y = A<=B? A==B?3'b010:3'b100 :3'b001;
 
 endmodule

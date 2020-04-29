@@ -1,4 +1,4 @@
-// TODO: testbench and debug
+// * 半减器、全减器、四位全减器
 
 module half_substracter(
     input  A,
@@ -21,7 +21,7 @@ module full_substracter(
     output J
 );
 
-    assign {D, J} = {^{A, B, J0}, |{~A&J0, ~A&B, B&J0}};
+    assign {J, D} = A - B -J0;
 
 endmodule
 
@@ -34,6 +34,6 @@ module foul_bit_full_substracter(
     output       J
 );
 
-    assign {J, D} = A + ~B + 5'b1_0001;
+    assign {J, D} = A - B - J0;
 
 endmodule

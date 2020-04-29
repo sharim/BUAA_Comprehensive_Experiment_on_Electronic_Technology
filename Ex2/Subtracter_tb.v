@@ -1,0 +1,77 @@
+// testbench of Subtracter
+
+`include "Subtracter.v"
+`timescale 1ns/1ps
+
+module Subtracter_tb();
+
+    initial begin
+        $dumpfile("Subtracter_tb.vcd");
+        $dumpvars(0, Subtracter_tb);
+    end
+
+    // half_substracter Parameters
+    parameter PERIOD = 10;
+
+    // half_substracter Inputs
+    reg        A   = 0;
+    reg        B   = 0;
+    reg        J0  = 0;
+    reg [3:0]  A2  = 0;
+    reg [3:0]  B2  = 0;
+    reg        J01 = 0;
+
+    // half_substracter Outputs
+    wire       D      ;
+    wire       J      ;
+    wire       D1     ;
+    wire       J1     ;
+    wire [3:0] D2     ;
+    wire       J2     ;
+
+    reg clk = 0;
+    initial begin
+    forever #(PERIOD/2) clk = ~clk;
+    end
+
+    // initial begin
+    //     #(PERIOD*2) rst_n = 1;
+    // end
+
+    half_substracter  u_half_substracter (
+        .A  (A   ),
+        .B  (B   ),
+
+        .D  (D   ),
+        .J  (J   )
+    );
+
+    full_substracter u_full_substracter (
+        .A  (A  ),
+        .B  (B  ),
+        .J0 (J0 ),
+
+        .D  (D1 ),
+        .J  (J1 )
+    );
+
+    foul_bit_full_substracter  u_foul_bit_full_substracter (
+        .A  (A2 ),
+        .B  (B2 ),
+        .J0 (J01),
+
+        .D  (D2 ),
+        .J  (J2 )
+    );
+
+    always @(posedge clk) begin
+        {B, A, J0}    <= {B, A, J0} + 1;
+        {B2, A2, J01} <= {B2, A2, J01} + 1;
+    end
+
+    initial begin
+        #5110
+        $finish;
+    end
+
+endmodule
