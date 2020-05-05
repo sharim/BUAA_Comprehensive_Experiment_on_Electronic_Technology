@@ -18,7 +18,7 @@ module priorityEncoder__8_3(
     always @(in) begin: loop
         for (i = 7; i >= 0; i = i - 1) begin
             if (in[i] == 1) begin
-                out <= i;
+                out = i;
                 disable loop;
             end
         end
@@ -39,17 +39,17 @@ module priorityEncoder_74xx148(
     always @(ST or in) begin
         if (!ST) begin
             if(&in) begin
-                {out, YEX, YS} <= 5'b1_1110;
+                {out, YEX, YS} = 5'b1_1110;
             end else begin: loop
                 for (i = 0; i < 8; i = i + 1) begin
                     if (in[i] == 0) begin
-                        {out, YEX, YS} <= {i, 1'b0, 1'b1};
+                        {out, YEX, YS} = {i, 1'b0, 1'b1};
                         disable loop;
                     end
                 end
             end
         end else begin
-            {out, YEX, YS} <= 5'b1_1111;
+            {out, YEX, YS} = 5'b1_1111;
         end
     end
 

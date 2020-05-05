@@ -2,6 +2,12 @@ Ex[0-9]/db
 Ex[0-9]/incremental_db
 EX[0-9]/output_files
 EX[0-9]/simulation
+Other
+Other/db
+Other/incremental_db
+Other/output_files
+Other/simulation
+tmp
 *.zip
 *.rpt
 *.out

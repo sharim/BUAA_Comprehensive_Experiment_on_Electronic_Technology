@@ -2,13 +2,14 @@
 
 module  Ex1(
     input  [3:0] in,
-    output       and_out,
-    output       or_out,
-    output       not_out,
-    output       nand_out,
-    output       aoi_out,
+    output       and_out  ,
+    output       or_out   ,
+    output       not_out  ,
+    output       nand_out ,
+    output       aoi_out  ,
     output       xor_out_1,
-    output       xor_out_2);
+    output       xor_out_2
+);
 
     // * (1) 实现非门、与门、或门、与非门、与或非门、异或门
     // 与门

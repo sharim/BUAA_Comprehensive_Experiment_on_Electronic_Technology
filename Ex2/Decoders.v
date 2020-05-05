@@ -11,7 +11,7 @@ module decoder__3_8(
 
     always @(S1 or notS2 or notS3 or A) begin
         notY <= 8'b1111_1111;
-        if (~(|{~S1, notS2, notS3})) notY[A] <= 1'b0;
+        if (~(|{~S1, notS2, notS3})) notY[A] = 1'b0;
     end
 
 endmodule // 3-8线译码器

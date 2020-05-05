@@ -3,6 +3,11 @@
 
 module Ex1_tb();
 
+    // initial begin
+    //     $dumpfile("Ex1_tb.vcd");
+    //     $dumpvars(0, Ex1_tb);
+    // end
+
     // Ex1 Parameters
     parameter PERIOD = 10;
 
