@@ -2,6 +2,7 @@
 
 module encoder__8_to_3(
     input  [7:0] in,
+
     output [2:0] out
 );
 
@@ -10,7 +11,8 @@ module encoder__8_to_3(
 endmodule // 8-3线二进制编码器
 
 module priorityEncoder__8_3(
-    input      [7:0] in,
+    input      [7:0] in ,
+
     output reg [2:0] out
 );
 
@@ -21,6 +23,7 @@ module priorityEncoder__8_3(
                 out = i;
                 disable loop;
             end
+            out = 0;
         end
     end
 

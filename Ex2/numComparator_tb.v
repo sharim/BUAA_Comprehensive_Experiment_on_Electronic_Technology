@@ -29,7 +29,7 @@ module numComparator_tb();
     //     #(PERIOD*2) rst_n = 1;
     // end
 
-    foul_bit_numComparator  u_foul_bit_numComparator (
+    four_bit_numComparator  u_four_bit_numComparator (
         .A (A [3:0]),
         .B (B [3:0]),
 

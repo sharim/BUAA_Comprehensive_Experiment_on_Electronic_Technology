@@ -1,13 +1,13 @@
 //~ `New testbench
 `timescale 1ns/1ps
 
-`include "Decoders.v"
+`include "Decoder.v"
 
-module Decoders_tb();
+module Decoder_tb();
 
     initial begin
-        $dumpfile("Decoders_tb.vcd");
-        $dumpvars(0, Decoders_tb);
+        $dumpfile("Decoder_tb.vcd");
+        $dumpvars(0, Decoder_tb);
     end
 
     // decoder__3_8 Parameters

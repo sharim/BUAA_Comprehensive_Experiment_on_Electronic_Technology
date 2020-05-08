@@ -18,7 +18,7 @@ module Extension(
     genvar i;
     generate
         for (i = 0; i < 31; i = i + 4) begin: GENERATE_ADDERS
-            foul_bit_full_adder u_foul_bit_full_adder(
+            four_bit_full_adder u_four_bit_full_adder(
                 .num1  (num1 [i + 3 : i]),
                 .num2  (num2 [i + 3 : i]),
                 .C_in  (cio  [i / 4    ]),

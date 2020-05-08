@@ -1,6 +1,6 @@
 // * 半减器、全减器、四位全减器
 
-module half_substracter(
+module half_subtracter(
     input  A,
     input  B,
 
@@ -12,12 +12,12 @@ module half_substracter(
 
 endmodule
 
-module full_substracter(
-    input  A,
-    input  B,
+module full_subtracter(
+    input  A ,
+    input  B ,
     input  J0,
 
-    output D,
+    output D ,
     output J
 );
 
@@ -25,12 +25,12 @@ module full_substracter(
 
 endmodule
 
-module foul_bit_full_substracter(
-    input  [3:0] A,
-    input  [3:0] B,
+module four_bit_full_subtracter(
+    input  [3:0] A ,
+    input  [3:0] B ,
     input        J0,
 
-    output [3:0] D,
+    output [3:0] D ,
     output       J
 );
 

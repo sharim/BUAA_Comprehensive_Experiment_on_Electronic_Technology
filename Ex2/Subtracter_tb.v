@@ -38,7 +38,7 @@ module Subtracter_tb();
     //     #(PERIOD*2) rst_n = 1;
     // end
 
-    half_substracter  u_half_substracter (
+    half_subtracter  u_half_subtracter (
         .A  (A   ),
         .B  (B   ),
 
@@ -46,7 +46,7 @@ module Subtracter_tb();
         .J  (J   )
     );
 
-    full_substracter u_full_substracter (
+    full_subtracter u_full_subtracter (
         .A  (A  ),
         .B  (B  ),
         .J0 (J0 ),
@@ -55,7 +55,7 @@ module Subtracter_tb();
         .J  (J1 )
     );
 
-    foul_bit_full_substracter  u_foul_bit_full_substracter (
+    four_bit_full_subtracter  u_four_bit_full_subtracter (
         .A  (A2 ),
         .B  (B2 ),
         .J0 (J01),

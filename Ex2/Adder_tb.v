@@ -55,7 +55,7 @@ module Adder_tb();
         .C     (C_2  )
     );
 
-    foul_bit_full_adder u_foul_bit_full_adder(
+    four_bit_full_adder u_four_bit_full_adder(
         .num1  (num1 ),
         .num2  (num2 ),
         .C_in  (C_in ),
