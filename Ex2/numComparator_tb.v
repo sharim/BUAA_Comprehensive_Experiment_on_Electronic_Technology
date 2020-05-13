@@ -32,16 +32,18 @@ module numComparator_tb();
     four_bit_numComparator  u_four_bit_numComparator (
         .A (A [3:0]),
         .B (B [3:0]),
+        .I (3'b010 ),
 
         .Y (Y [2:0])
     );
 
     always @(posedge clk) begin
-        {A, B} <= {A, B} + 1;
+        A <= {$random} % 16;
+        B <= {$random} % 16;
     end
 
     initial begin
-        #2550
+        #200
         $finish;
     end
 

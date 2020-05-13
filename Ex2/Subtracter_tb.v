@@ -65,8 +65,8 @@ module Subtracter_tb();
     );
 
     always @(posedge clk) begin
-        {B, A, J0}    <= {B, A, J0} + 1;
-        {B2, A2, J01} <= {B2, A2, J01} + 1;
+        {B, A, J0}    <= {$random} %   8;
+        {B2, A2, J01} <= {$random} % 512;
     end
 
     initial begin

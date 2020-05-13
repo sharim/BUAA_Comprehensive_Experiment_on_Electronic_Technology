@@ -2,6 +2,8 @@ Ex[0-9]/db
 Ex[0-9]/incremental_db
 EX[0-9]/output_files
 EX[0-9]/simulation
+EX[0-9]/work
+EX[0-9]/myWork
 Other
 Other/db
 Other/incremental_db
@@ -18,5 +20,10 @@ tmp
 *.bak
 *.lxt
 *.qdf
+*.txt
+*.mti
+*.mpf
+*.wlf
+*.vstf
 .gitignore
 .vscode

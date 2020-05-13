@@ -2,16 +2,16 @@
 
 module decoder__3_8(
     input               S1,
-    input            notS2,
-    input            notS3,
+    input               S2,
+    input               S3,
     input      [2:0]     A,
 
-    output reg [7:0]  notY
+    output reg [7:0]     Y
 );
 
-    always @(S1 or notS2 or notS3 or A) begin
-        notY <= 8'b1111_1111;
-        if (~(|{~S1, notS2, notS3})) notY[A] = 1'b0;
+    always @(S1 or S2 or S3 or A) begin
+        Y = 8'b1111_1111;
+        if (~(|{~S1, S2, S3})) Y[A] = 1'b0;
     end
 
 endmodule // 3-8线译码器

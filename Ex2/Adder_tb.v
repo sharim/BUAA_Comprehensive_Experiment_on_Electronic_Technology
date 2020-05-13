@@ -65,12 +65,12 @@ module Adder_tb();
     );
 
     always @(posedge clk) begin
-        {X, Y, C_0}        <= {X, Y, C_0} + 1;
-        {num1, num2, C_in} <= {num1, num2, C_in} + 1;
+        {X, Y, C_0}        <= {$random} %   8;
+        {num1, num2, C_in} <= {$random} % 512;
     end
 
     initial begin
-        #10230
+        #200
         $finish;
     end
 

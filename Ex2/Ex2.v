@@ -67,11 +67,11 @@ module Ex2(
     // * Decoder(译码器)
     decoder__3_8 u_decoder__3_8(
         .S1    (in_6[  5]       ),
-        .notS2 (in_6[  4]       ),
-        .notS3 (in_6[  3]       ),
+        .S2    (in_6[  4]       ),
+        .S3    (in_6[  3]       ),
         .A     (in_6[2:0]       ),
 
-        .notY  (decoderOut[14:7])
+        .Y     (decoderOut[14:7])
     );
     decoder__BCD_SEVEN u_decoder__BCD_SEVEN(
         .A     (in_4            ),

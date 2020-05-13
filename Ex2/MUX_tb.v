@@ -52,12 +52,12 @@ module MUX_tb();
     );
 
     always @(posedge clk) begin
-        {S, D, A} <= {S, D, A} + 1;
-        {S1, D1, A1} <= {S1, D1, A1} + 1;
+        {S , D , A } <= {$random} %  128;
+        {S1, D1, A1} <= {$random} % 4096;
     end
 
     initial begin
-        #40950
+        #200
         $finish;
     end
 

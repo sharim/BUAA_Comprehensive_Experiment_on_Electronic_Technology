@@ -11,18 +11,18 @@ module Decoder_tb();
     end
 
     // decoder__3_8 Parameters
-    parameter PERIOD = 100;
+    parameter PERIOD = 10;
 
     // decoder__3_8 Inputs
     reg        S1    = 0;
-    reg        notS2 = 0;
-    reg        notS3 = 0;
+    reg        S2    = 0;
+    reg        S3    = 0;
     reg  [2:0] A1    = 0;
     reg  [3:0] A2    = 0;
 
     // decoder__3_8 Outputs
-    wire [7:0] notY ;
-    wire [6:0]    Y ;
+    wire [7:0]    Y1;
+    wire [6:0]    Y2;
 
     reg clk = 0;
     initial begin
@@ -35,26 +35,28 @@ module Decoder_tb();
 
     decoder__3_8  u_decoder__3_8 (
         .S1    (S1         ),
-        .notS2 (notS2      ),
-        .notS3 (notS3      ),
+        .S2    (S2         ),
+        .S3    (S3         ),
         .A     (A1    [2:0]),
 
-        .notY  (notY  [7:0])
+        .Y     (Y1    [7:0])
     );
 
     decoder__BCD_SEVEN  u_decoder__BCD_SEVEN (
         .A     (A2        ),
 
-        .Y     (Y         )
+        .Y     (Y2        )
     );
 
+    integer i = 0;
     always @(posedge clk) begin
+        A1 <= A1 + 1;
         A2 <= A2 + 1;
     end
     initial begin
-        S1=0; #100
-        S1=1; notS2=1; #100
-        S1=1; notS2=0; notS3=0; A1=3'b110;#800
+        S1=0; #10
+        S1=1; S2=1; #10
+        S1=1; S2=0; S3=0; #80
         $finish;
     end
 
