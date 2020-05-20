@@ -1,4 +1,4 @@
-// TODO: RS触发器、JK触发器和D触发器
+// * RS触发器、JK触发器和D触发器
 
 module RS_flip_flop(
     input       clk  ,
