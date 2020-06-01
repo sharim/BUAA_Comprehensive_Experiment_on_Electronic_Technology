@@ -23,13 +23,10 @@ module async_counter(
 
     reg div2, div4, div8, div16;
 
-    always @(negedge rst_n)
-        {div2, div4, div8, div16, out} <= 0;
-
-    always @(negedge clk  ) div2  <= rst_n? ~div2 :0;
-    always @(negedge div2 ) div4  <= rst_n? ~div4 :0;
-    always @(negedge div4 ) div8  <= rst_n? ~div8 :0;
-    always @(negedge div8 ) div16 <= rst_n? ~div16:0;
+    always @(negedge clk  or negedge rst_n) div2  <= (!rst_n)? 0:~div2 ;
+    always @(negedge div2 or negedge rst_n) div4  <= (!rst_n)? 0:~div4 ;
+    always @(negedge div4 or negedge rst_n) div8  <= (!rst_n)? 0:~div8 ;
+    always @(negedge div8 or negedge rst_n) div16 <= (!rst_n)? 0:~div16;
 
     always @(*) out = {div16, div8, div4, div2};
 

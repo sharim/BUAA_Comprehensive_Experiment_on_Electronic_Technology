@@ -1,7 +1,6 @@
 // * RS触发器、JK触发器和D触发器
 
 module RS_flip_flop(
-    input       clk  ,
     input       rst_n,
     input       set_n,
 
@@ -11,7 +10,7 @@ module RS_flip_flop(
 
     assign Q_n = ~Q;
 
-    always @(posedge clk or negedge rst_n or negedge set_n) begin
+    always @(rst_n or set_n) begin
         case({rst_n, set_n})
             2'b00: Q <= Q   ;
             2'b01: Q <= 1'b0;

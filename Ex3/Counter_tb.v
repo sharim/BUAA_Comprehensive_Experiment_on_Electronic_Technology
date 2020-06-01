@@ -5,10 +5,10 @@
 
 module Counter_tb();
 
-    initial begin
-        $dumpfile("Counter_tb.vcd");
-        $dumpvars(0, Counter_tb);
-    end
+    // initial begin
+    //     $dumpfile("Counter_tb.vcd");
+    //     $dumpvars(0, Counter_tb);
+    // end
 
     // Counter Parameters
     parameter PERIOD = 10;

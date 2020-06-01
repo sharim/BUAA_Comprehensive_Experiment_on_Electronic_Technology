@@ -44,7 +44,7 @@ module Register_tb();
         .parallel_data_out (parallel_data_out [3:0])
     );
 
-    sequence_generator u_sequence_generator (
+    sequence_generator_fsm u_sequence_generator_fsm (
         .clk   (clk  ),
         .rst_n (rst_n),
 
