@@ -2,7 +2,7 @@ module UART_rx
 #(
     parameter CLK_FRE     = 50    , // clock frequency(Mhz)
 	parameter BAUD_RATE   = 115200, // serial baud rate
-    parameter DATA_WIDTH  = 8     , // width(<=16) of data to transmit
+    parameter DATA_WIDTH  = 8     , // width(5~8) of data to transmit
     parameter PARITY_MODE = "none", // none: no parity  even: even parity  odd: odd parity
     parameter STOP_WIDTH  = 1       // width(1 or 1.5 or 2) of stop bits
 )
@@ -19,20 +19,22 @@ module UART_rx
     // calculates the clock cycle for baud rate
     localparam CYCLE = CLK_FRE * 100_0000 / BAUD_RATE;
     // state machine code
-    localparam S_IDLE   = 5'b0_0001; // idle
-    localparam S_START  = 5'b0_0010; // start bit
-    localparam S_DATA   = 5'b0_0100; // data bits
-    localparam S_PARITY = 5'b0_1000; // parity bit
-    localparam S_STOP   = 5'b1_0000; // stop bits
-    // width of counter regidter
-    localparam CYCLE_CNT_WIDTH = width(CYCLE * STOP_WIDTH - 1);
-    localparam BIT_CNT_WIDTH   = width(DATA_WIDTH - 1)        ;
+    localparam S_IDLE   = 5'b0_0001; // state: idle
+    localparam S_START  = 5'b0_0010; // state: start bit
+    localparam S_DATA   = 5'b0_0100; // state: data bits
+    localparam S_PARITY = 5'b0_1000; // state: parity bit
+    localparam S_STOP   = 5'b1_0000; // state: stop bits
+    // // // width of counter regidter
+    // // localparam CYCLE_CNT_WIDTH = width(CYCLE * STOP_WIDTH - 1);
+    // // localparam BIT_CNT_WIDTH   = width(DATA_WIDTH - 1)        ;
     // state registers
     reg [4:0] state     ; // current state
     reg [4:0] next_state; // next state
     // counter register
-    reg [CYCLE_CNT_WIDTH-1:0] cycle_cnt; // baud counter
-    reg [BIT_CNT_WIDTH-1  :0] bit_cnt  ; // bit counter
+    // // reg [CYCLE_CNT_WIDTH-1:0] cycle_cnt; // baud counter
+    // // reg [BIT_CNT_WIDTH-1  :0] bit_cnt  ; // bit counter
+    reg [15:0] cycle_cnt; // baud counter(max: 65535)
+    reg [ 2:0] bit_cnt  ; // bit counter (max: 7)
     // data register
     reg                  rx_parity_bit ; // parity bit received
     reg [DATA_WIDTH-1:0] rx_data_latch ; // latch data to output
@@ -130,9 +132,9 @@ module UART_rx
         if (!rst_n) rx_error <= 1'b0;
         else if (state == S_IDLE)
             if (rx_enable && rx_negedge) rx_error <= 1'b0;
-            else rx_error <= parity(PARITY_MODE, rx_data_latch, rx_parity_bit);
+            else rx_error <= check(PARITY_MODE, rx_data_latch, rx_parity_bit);
         else if (state == S_STOP && next_state != state)
-            rx_error <= parity(PARITY_MODE, rx_data_latch, rx_parity_bit);
+            rx_error <= check(PARITY_MODE, rx_data_latch, rx_parity_bit);
     end
 
     always @(posedge clk or negedge rst_n) begin: FSM_OUTPUT__RX_DATA
@@ -143,23 +145,23 @@ module UART_rx
     // *------------------- OUTPUT LOGIC: END --------------------* //
 
     //* -------------------- FUNCTION: START --------------------- *//
-    function integer width;
-        input integer num;
-        begin
-            width = 0;
-            while (num >> width) width = width +1;
-        end
-    endfunction
+    // // function integer width;
+    // //     input integer num;
+    // //     begin
+    // //         width = 0;
+    // //         while (num >> width) width = width +1;
+    // //     end
+    // // endfunction
 
-    function reg parity;
+    function reg check;
         input [4*8-1       :0] parity_mode;
         input [DATA_WIDTH-1:0] data       ;
         input                  parity_bit ;
         begin
             case (parity_mode)
-                "even" : parity = ~(^{data, parity_bit});
-                "odd"  : parity = ^{data, parity_bit}   ;
-                default: parity = 1'b0                  ;
+                "even" : check = ~(^{data, parity_bit});
+                "odd"  : check = ^{data, parity_bit}   ;
+                default: check = 1'b0                  ;
             endcase
         end
     endfunction

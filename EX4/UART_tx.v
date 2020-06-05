@@ -2,7 +2,7 @@ module UART_tx
 #(
     parameter CLK_FRE     = 50    , // clock frequency(Mhz)
 	parameter BAUD_RATE   = 115200, // serial baud rate
-    parameter DATA_WIDTH  = 8     , // width(<=16) of data to transmit
+    parameter DATA_WIDTH  = 8     , // width(5~8) of data to transmit
     parameter PARITY_MODE = "none", // none: no parity  even: even parity  odd: odd parity
     parameter STOP_WIDTH  = 1       // width(1 or 1.5 or 2) of stop bits
 )
@@ -18,20 +18,22 @@ module UART_tx
     // calculates the clock cycle for baud rate
     localparam CYCLE = CLK_FRE * 100_0000 / BAUD_RATE;
     // state machine code
-    localparam S_IDLE   = 5'b0_0001; // idle
-    localparam S_START  = 5'b0_0010; // start bit
-    localparam S_DATA   = 5'b0_0100; // data bits
-    localparam S_PARITY = 5'b0_1000; // parity bit
-    localparam S_STOP   = 5'b1_0000; // stop bits
-    // width of counter regidter
-    localparam CYCLE_CNT_WIDTH = width(CYCLE * STOP_WIDTH - 1);
-    localparam BIT_CNT_WIDTH   = width(DATA_WIDTH - 1)        ;
+    localparam S_IDLE   = 5'b0_0001; // state: idle
+    localparam S_START  = 5'b0_0010; // state: start bit
+    localparam S_DATA   = 5'b0_0100; // state: data bits
+    localparam S_PARITY = 5'b0_1000; // state: parity bit
+    localparam S_STOP   = 5'b1_0000; // state: stop bits
+    // // // width of counter regidter
+    // // localparam CYCLE_CNT_WIDTH = width(CYCLE * STOP_WIDTH - 1);
+    // // localparam BIT_CNT_WIDTH   = width(DATA_WIDTH - 1)        ;
     // state registers
     reg [4:0] state     ; // current state
     reg [4:0] next_state; // next state
     // counter register
-    reg [CYCLE_CNT_WIDTH-1:0] cycle_cnt; // baud counter
-    reg [BIT_CNT_WIDTH-1  :0] bit_cnt  ; // bit counter
+    // // reg [CYCLE_CNT_WIDTH-1:0] cycle_cnt; // baud counter
+    // // reg [BIT_CNT_WIDTH-1  :0] bit_cnt  ; // bit counter
+    reg [15:0] cycle_cnt; // baud counter(max: 65535)
+    reg [ 2:0] bit_cnt  ; // bit counter (max: 7)
     // data register
     reg                  tx_parity_bit; // parity bit to transmit
     reg [DATA_WIDTH-1:0] tx_data_latch; // latch data to transmit
@@ -120,7 +122,7 @@ module UART_tx
     end
 
     always @(posedge clk or rst_n) begin: FSM_OUTPUT__TX_REG
-        if (rst_n) tx_reg <= 1'b1;
+        if (!rst_n) tx_reg <= 1'b1;
         else
             case (state)
                 S_IDLE  : tx_reg <= 1'b1                  ;
@@ -137,12 +139,13 @@ module UART_tx
     // ************************************************************ //
 
     //* -------------------- FUNCTION: START --------------------- *//
-    function integer width(input integer num);
-        begin
-            width = 0;
-            while (num >> width) width = width +1;
-        end
-    endfunction
+    // // function integer width;
+    // // input integer num;
+    // //     begin
+    // //         width = 0;
+    // //         while (num >> width) width = width +1;
+    // //     end
+    // // endfunction
     //* -------------------- FUNCTION: START --------------------- *//
 
 endmodule // UART_tx
